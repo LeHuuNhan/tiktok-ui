@@ -1,0 +1,33 @@
+.menu-item {
+    font-family: "IBM Plex Sans", TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+
+    &.active {
+        color: #fe2c55;
+
+        .icon {
+            display: none;
+        }
+        
+        .active-icon {
+            display: flex;
+        }
+    }
+
+    &:hover {
+        background: rgba(22, 24, 35, 0.03)
+    }
+}
+
+.title {
+    margin-left: 10px;
+}
+
+.active-icon {
+    display: none;
+}

@@ -1,0 +1,108 @@
+.search, .search-result {
+    width: 361px;
+}
+
+.search-result {
+        width: 361px;
+        background: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 12px;
+        border-radius: 8px;
+        max-height: min((100px - 96px) - 60px, 734px);
+        min-height: 100px;
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;    
+}
+
+.search {
+    position: relative;
+    height: 46px;
+    padding-left: 16px;
+    display: flex;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-darius);
+    border: 1.5px solid transparent;
+
+    input {
+        height: 100%;
+        padding-right: 40px;
+        flex: 1;
+        color: var(--black);
+        font-size: 1.0rem;
+        border: none;
+        outline: none;
+        caret-color: #fe2c55;
+        background-color: transparent;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn{
+        color: rgb(22, 24, 35);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        top: 9px;
+        right: 52px;
+        height: 28px;
+        background-color:rgba(22, 24, 35, 0.34);
+    }
+
+    &:focus-within {
+        border-color: rgba(22,24,35,0.2);
+    }
+}
+
+.search-title{
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+
+.clear {
+    border: none;
+    outline: none;
+}
+
+.clear , .loading {
+    position: absolute;
+    right: calc(52px + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.loading {
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: translateY(-50%) rotate(0);
+    }
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.search-btn {
+    width: 52px;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-top-right-radius: var(--search-border-darius);
+    border-bottom-right-radius: var(--search-border-darius);
+    font-size: 1.5rem;
+    color: rgba(22, 24, 35, 0.34);
+
+    &:hover {
+        cursor: pointer;
+        background: rgba(22,24,35,0.03);
+    }
+    
+    &:active{
+        background-color: rgba(22,24,35,0.06);
+    }
+}
